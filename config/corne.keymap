@@ -36,13 +36,13 @@
 // -----------------------------------------------------------------------------------------
 // |  ESC |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
 // | HOME | LFT | DWN |  UP | RGT | END |   | LFT | DWN |  UP | RGT |     | STENO|
-// | SHFT | BT1 | BT2 | BT3 | BT4 |BTCLR|   | MUTE|VOLDN|VOLUP| PREV| NEXT| PL_PS|
+// | SHFT |VOLDN|VOLUP| PREV| NEXT|PL_PS|   | MUTE| BT1 | BT2 | BT3 | BT4 | BTCLR|
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
-   &kp ESC    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5            &kp N6     &kp N7   &kp N8 &kp N9       &kp  N0      &kp BSPC
-   &kp HOME   &kp LEFT     &kp DOWN     &kp UP       &kp RIGHT    &kp END           &kp LEFT   &kp DOWN &kp UP &kp RIGHT    &trans       &tog STENO
-   &kp LSHFT  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_CLR        &kp K_MUTE &kp C_VOL_DN  &kp C_VOL_UP   &kp  C_PREV  &kp C_NEXT &kp C_PP
-                                        &kp LGUI     &trans       &kp SPACE         &kp RET &trans &kp RALT
+   &kp ESC    &kp N1       &kp N2       &kp N3      &kp N4     &kp N5         &kp N6     &kp N7   &kp N8 &kp N9       &kp  N0      &kp BSPC
+   &kp HOME   &kp LEFT     &kp DOWN     &kp UP      &kp RIGHT  &kp END        &kp LEFT   &kp DOWN &kp UP &kp RIGHT    &trans       &tog STENO
+   &kp LSHFT  &kp C_VOL_DN &kp C_VOL_UP &kp C_PREV  &kp C_NEXT &kp C_PP       &kp K_MUTE &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_CLR        
+                                        &kp LGUI    &trans     &kp SPACE      &kp RET    &trans &kp RALT
                         >;
                 };
 
@@ -50,26 +50,26 @@
 // -----------------------------------------------------------------------------------------
 // |  ESC |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
 // | CTRL | LFT | DWN |  UP | RGT |     |   |  -  |  =  |  {  |  }  | "|" |  `   |
-// | SHFT |EPOFF|OUTTG|     |     |     |   |  _  |  +  |  [  |  ]  |  \  |  ~   | // TODO: Fix this row when &mkp is committed
-//                    | GUI |     | SPC |   | ENT |     | ALT |
+// | SHFT |EPOFF|OUTTG|     |     |     |   |  _  |  +  |  [  |  ]  |  \  |  ~   | 
+//                    | GUI |     | SPC |   | ENT |     | ALT |         
                         bindings = <
-   &kp  ESC  &kp EXCL           &kp AT          &kp HASH  &kp DLLR   &kp PRCNT   &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR &kp BSPC
-   &kp LCTRL &kp LEFT           &kp DOWN        &kp UP    &kp RIGHT  &trans      &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp PIPE &kp GRAVE
-   &kp LSHFT &ext_power EP_OFF  &out OUT_TOG    &trans    &trans     &trans      &trans    &trans    &trans          &trans   &kp BSLH &kp TILDE
-                                                &kp LGUI &trans &kp SPACE   &kp RET &trans &kp RALT
+   &kp  ESC  &kp EXCL           &kp AT          &kp HASH  &kp DLLR   &kp PRCNT     &kp CARET  &kp AMPS  &kp KP_MULTIPLY  &kp LPAR &kp RPAR &kp BSPC
+   &kp LCTRL &kp LEFT           &kp DOWN        &kp UP    &kp RIGHT  &trans        &kp MINUS  &kp EQUAL &kp LBRC         &kp RBRC &kp PIPE &kp GRAVE
+   &kp LSHFT &ext_power EP_OFF  &out OUT_TOG    &trans    &trans     &trans        &kp UNDER  &kp PLUS  &kp LBKT         &kp RBKT &kp BSLH &kp TILDE
+                                                &kp LGUI  &trans     &kp SPACE     &kp RET    &trans    &kp RALT
                         >;
                 };
                 steno_layer {
 // -----------------------------------------------------------------------------------------
-// | T_0 |     |     |     |     |     |   |     |      |     |     |     | BKSP |
-// |  Q  |  W  |  E  |  R  |  T  |     |   |  Y  |  U   |  I  |  O  |  P  |  [   |
+// | ESC |  1  |  2  |  3  |  4  |  5  |   |  6  |  7   |  8  |  9  |  0  | BKSP |
+// |  Q  |  W  |  E  |  R  |  T  | T_0 |   |  Y  |  U   |  I  |  O  |  P  |  [   |
 // |  A  |  S  |  D  |  F  |  G  |     |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-//                   |  C  |  V  | SPC |   | BKSP|  N   |  M  |
+//                   |  C  |  V  |  G  |   |  H  |  N   |  M  |
                         bindings = <
-   &to 0   &trans &trans &trans &trans &trans        &trans    &trans &trans    &trans  &trans   &kp BSPC
-   &kp Q   &kp W  &kp E  &kp R  &kp T  &trans        &kp Y     &kp U  &kp I     &kp O   &kp P    &kp LBKT
-   &kp A   &kp S  &kp D  &kp F  &kp G  &trans        &kp H     &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-                         &kp C  &kp V  &kp SPACE     &kp BSPC  &kp N  &kp M
+   &kp ESC &kp N1 &kp N2 &kp N3 &kp N4 &kp N5     &kp N6    &kp N7 &kp N8    &kp N9  &kp N0   &kp BSPC
+   &kp Q   &kp W  &kp E  &kp R  &kp T  &to 0      &kp Y     &kp U  &kp I     &kp O   &kp P    &kp LBKT
+   &kp A   &kp S  &kp D  &kp F  &kp G  &trans     &kp H     &kp J  &kp K     &kp L   &kp SEMI &kp SQT
+                         &kp C  &kp V  &kp G      &kp H     &kp N  &kp M
                         >;
                 };
         };
