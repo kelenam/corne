@@ -36,12 +36,12 @@
 // -----------------------------------------------------------------------------------------
 // |  ESC |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
 // | HOME | LFT | DWN |  UP | RGT | END |   | LFT | DWN |  UP | RGT |     | STENO|
-// | SHFT |VOLDN|VOLUP| PREV| NEXT|PL_PS|   | MUTE| BT1 | BT2 | BT3 | BT4 | BTCLR|
+// | SHFT |VOLDN|VOLUP| PREV| NEXT|PL_PS|   | MUTE| BT1 | BT2 | BT3 |BTCLR| OUTTG|
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
    &kp ESC    &kp N1       &kp N2       &kp N3      &kp N4     &kp N5         &kp N6     &kp N7   &kp N8 &kp N9       &kp  N0      &kp BSPC
    &kp HOME   &kp LEFT     &kp DOWN     &kp UP      &kp RIGHT  &kp END        &kp LEFT   &kp DOWN &kp UP &kp RIGHT    &trans       &tog STENO
-   &kp LSHFT  &kp C_VOL_DN &kp C_VOL_UP &kp C_PREV  &kp C_NEXT &kp C_PP       &kp K_MUTE &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_CLR        
+   &kp LSHFT  &kp C_VOL_DN &kp C_VOL_UP &kp C_PREV  &kp C_NEXT &kp C_PP       &kp K_MUTE &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2  &bt BT_CLR  &out OUT_TOG       
                                         &kp LGUI    &trans     &kp SPACE      &kp RET    &trans &kp RALT
                         >;
                 };
@@ -50,12 +50,12 @@
 // -----------------------------------------------------------------------------------------
 // |  ESC |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
 // | CTRL | LFT | DWN |  UP | RGT |     |   |  -  |  =  |  {  |  }  | "|" |  `   |
-// | SHFT |EPTOG|OUTTG|     |     |     |   |  _  |  +  |  [  |  ]  |  \  |  ~   | 
+// | SHFT | ALT |     |     |     |     |   |  _  |  +  |  [  |  ]  |  \  |  ~   | 
 //                    | GUI |     | SPC |   | ENT |     | ALT |         
                         bindings = <
    &kp  ESC  &kp EXCL           &kp AT          &kp HASH  &kp DLLR   &kp PRCNT     &kp CARET  &kp AMPS  &kp KP_MULTIPLY  &kp LPAR &kp RPAR &kp BSPC
    &kp LCTRL &kp LEFT           &kp DOWN        &kp UP    &kp RIGHT  &trans        &kp MINUS  &kp EQUAL &kp LBRC         &kp RBRC &kp PIPE &kp GRAVE
-   &kp LSHFT &ext_power EP_TOG  &out OUT_TOG    &trans    &trans     &trans        &kp UNDER  &kp PLUS  &kp LBKT         &kp RBKT &kp BSLH &kp TILDE
+   &kp LSHFT &kp LALT           &trans          &trans    &trans     &trans        &kp UNDER  &kp PLUS  &kp LBKT         &kp RBKT &kp BSLH &kp TILDE
                                                 &kp LGUI  &trans     &kp SPACE     &kp RET    &trans    &kp RALT
                         >;
                 };
