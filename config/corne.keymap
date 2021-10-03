@@ -16,7 +16,7 @@
 #define STENO   3
 
 &mt {
-    tapping-term-ms = <500>;
+    tapping-term-ms = <1000>;
 };
 
 / {
